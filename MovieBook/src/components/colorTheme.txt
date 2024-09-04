@@ -1,0 +1,9 @@
+Midnight Blue (#2c3e50) - A deep, rich blue for the primary background or header, giving a sense of elegance and stability.
+
+Crimson Red (#e74c3c) - A bold red for accents or call-to-action buttons, which can grab attention and convey excitement.
+
+Slate Gray (#95a5a6) - A neutral gray for secondary backgrounds or text, offering a clean and modern look.
+
+Gold (#f1c40f) - A bright, warm gold for highlights or important features, adding a touch of luxury and attention-grabbing appeal.
+
+White (#ffffff) - A classic white for text or background elements, ensuring readability and contrast with the darker colors.

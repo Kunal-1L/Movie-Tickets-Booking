@@ -1,0 +1,19 @@
+.about_container{
+    width:80%;
+    margin-left:10%;
+    border-radius:2rem;
+    box-shadow: 0 0 6px rgba(234, 224, 224, 0.382); 
+    padding:1rem;
+    color:aqua;
+    background-color: #292529;
+    font-size:1.1rem;
+    margin-top:5em;
+    margin-bottom: 2rem;;
+    min-height: 80vh;
+}
+
+.about_container div{
+    color:red;
+    font-size:1.2rem;
+    margin:1rem 0rem;
+}

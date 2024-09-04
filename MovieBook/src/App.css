@@ -1,0 +1,14 @@
+#root {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.hero_container{
+  min-height:100vh;
+  height:auto;
+  width:100%;
+  background-color:#495057;
+}
+
+

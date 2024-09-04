@@ -1,0 +1,89 @@
+.home_container {
+  height: 100%;
+  width: 100%;
+  min-height:100vh;
+  background: black;
+  position: relative;
+}
+
+.latest_movies{
+  padding-left:.5rem;
+  margin-top:0.5rem;
+  margin-bottom: 0;
+  color:aqua;
+  background-color:#212529;
+}
+.child_banner_container {
+  width: 90%;
+  object-fit: contain;
+  margin-top: 5%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.banner_icon img {
+  width: 40rem;
+  height:40rem;
+  animation: slideRight 10s ease-in-out infinite;
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+.banner_tag {
+  color: aquamarine;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  animation: enlarged 10s ease-in-out infinite;
+}
+
+@keyframes enlarged {
+  0% {
+    color: aqua;
+  }
+  50% {
+    color: aquamarine;
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    color: antiquewhite;
+  }
+}
+
+
+@media (max-width:768px) {
+  .banner_icon img {
+    width: 20rem;
+    height:20rem;
+  }
+
+  .banner_tag {
+    font-size: 1rem;
+    animation: enlarged 10s ease-in-out infinite;
+  }
+}

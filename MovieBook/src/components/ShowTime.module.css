@@ -1,0 +1,184 @@
+/* General Button Styles */
+.btn,
+.submit_btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  margin: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.submit_btn:hover {
+  background-color: #0056b3;
+}
+
+/* Submit Button Specific Style */
+.submit_btn {
+  display: block;
+  margin-top: 2rem;
+}
+
+/* Container for the Show Time Form */
+.showTime_container {
+  background: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  top:0;
+  left: 0;
+  overflow:hidden;
+  color: #03045e;
+  min-height: 100vh;
+}
+
+/* Close Button Container */
+.closeButton_container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.closeButton {
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.closeButton:hover {
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+}
+
+/* Main Box for Show Time Form */
+.showTime_box {
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  padding: 20px;
+  background-color: #212529;
+  box-shadow: 0 0 1rem rgba(2, 62, 138, 0.5);
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: aqua;
+}
+
+/* Label for Show Date */
+.showTime_box span {
+  color: aqua;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Input Fields for Date and Time */
+.showTime_box input {
+  border: none;
+  outline: none;
+  width: 8rem;
+  height: 2rem;
+  margin-right: 1rem;
+  background-color: #495057;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Date Input Container */
+.inputDate {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.inputDate label {
+  color: aqua;
+  padding-right: 0.5rem;
+}
+
+/* Time Input Container */
+.inputTimes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.inputTimes label {
+  color: aqua;
+  margin-right: 0.5rem;
+}
+
+
+
+.inputTimes .prices {
+  width: 6rem;
+}
+
+/* Responsive Adjustments for Screens <= 768px */
+@media (max-width: 768px) {
+  /* Adjusting .showTime_box to be full-width */
+  .showTime_box {
+    top: 5rem;
+    width: 95%;
+    left: 2.5%;
+    transform: none;
+    padding: 15px;
+  }
+
+  /* Adjusting input fields and labels for better spacing */
+  .showTime_box input {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .inputDate,
+  .inputTimes {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inputDate label,
+  .inputTimes label {
+    margin-bottom: 0.5rem;
+  }
+
+  .inputTimes .inputt {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .inputTimes .prices {
+    width: 100%;
+  }
+
+  /* Adjusting button sizes */
+  .btn,
+  .submit_btn {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  /* Close Button repositioned */
+  .closeButton_container {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .closeButton {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,70 @@
+/* MoviesGallery.module.css */
+
+.gallery_container {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background-color:#6c757d;
+  position: relative;
+  display:flex;
+  flex-direction: column;
+}
+.gallery {
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  margin-top: 1rem;
+  background-color:#212529;
+}
+
+.movies_gallery{
+  padding-left:.5rem;
+  margin-top:0.5rem;
+  margin-bottom: 0;
+  color:#212529;
+}
+.btn_cont {
+  margin-top: 20px;
+  margin-bottom:10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+}
+
+.prev_btn,
+.next_btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.prev_btn:hover,
+.next_btn:hover {
+  background-color: #0056b3;
+}
+
+.prev_btn:disabled,
+.next_btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+
+@media (max-width: 768px) {
+  .prev_btn,
+  .next_btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
