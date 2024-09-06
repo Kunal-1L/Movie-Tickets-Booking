@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import styles from "./Banner.module.css";
 
 const images = [
-  "../../public/3d-glasses-with-popcorns-clapperboard-concrete-backdrop.jpg",
-  "../../public/8204905.jpg",
-  "../../public/movie-background-collage.jpg"
+  "/3d-glasses-with-popcorns-clapperboard-concrete-backdrop.jpg",
+  "/8204905.jpg",
+  "/movie-background-collage.jpg"
 ];
+
 
 const Banner = () => {
 
