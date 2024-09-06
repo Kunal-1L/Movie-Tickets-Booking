@@ -4,10 +4,11 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 mongoose
-  .connect("mongodb+srv://kumar180kunal:Kunal@cluster0.jlade.mongodb.net/MovieTickets?retryWrites=true&w=majority")
+  .connect(
+    "mongodb+srv://kumar180kunal:Kunal@cluster0.jlade.mongodb.net/MovieTickets?retryWrites=true&w=majority"
+  )
   .then(() => console.log("Connected to MovieTickets Database :)"))
   .catch((err) => console.error("Error connecting to MongoDB: :(", err));
-
 
 // Defining the data structure of the loginRecord collection
 const loginSchema = new mongoose.Schema({
@@ -41,7 +42,7 @@ const movieSchema = new mongoose.Schema({
     required: true,
   },
   release_date: {
-    type: Date,
+    type: String,
     required: true,
   },
   duration: {
@@ -139,7 +140,7 @@ const TimeSchema = new mongoose.Schema(
       required: true,
     },
     bookingSeats: [[SeatSchema]],
-    ticketPrice: {type: Number,required: true}
+    ticketPrice: { type: Number, required: true },
   },
   { _id: false }
 );
@@ -620,7 +621,6 @@ const checkDates = async ({ theater_id, movieId }) => {
   }
 };
 
-
 app.get("/check_dates", async (req, res) => {
   try {
     const result = await checkDates(req.query);
@@ -630,7 +630,13 @@ app.get("/check_dates", async (req, res) => {
   }
 });
 
-const checkSeats = async({ theater_id, movieId, date, startTime, endTime }) => {
+const checkSeats = async ({
+  theater_id,
+  movieId,
+  date,
+  startTime,
+  endTime,
+}) => {
   try {
     const result = await Shows.aggregate([
       { $match: { userId: theater_id } }, // Match by userId
@@ -642,8 +648,8 @@ const checkSeats = async({ theater_id, movieId, date, startTime, endTime }) => {
         $match: {
           "shows.dates.date": date, // Match by date
           "shows.dates.times.startTime": startTime, // Match by startTime
-          "shows.dates.times.endTime": endTime // Match by endTime
-        }
+          "shows.dates.times.endTime": endTime, // Match by endTime
+        },
       },
       {
         $project: {
@@ -652,9 +658,9 @@ const checkSeats = async({ theater_id, movieId, date, startTime, endTime }) => {
           startTime: "$shows.dates.times.startTime",
           endTime: "$shows.dates.times.endTime",
           bookingSeats: "$shows.dates.times.bookingSeats",
-          ticketPrice: "$shows.dates.times.ticketPrice"
-        }
-      }
+          ticketPrice: "$shows.dates.times.ticketPrice",
+        },
+      },
     ]);
 
     console.log(result);
@@ -664,7 +670,6 @@ const checkSeats = async({ theater_id, movieId, date, startTime, endTime }) => {
     throw error;
   }
 };
-
 
 app.get("/check_seats", async (req, res) => {
   try {
@@ -686,7 +691,14 @@ app.get("/check_theater", async (req, res) => {
 
 const updateSeats = async ({ theater_id, movieId, seats }) => {
   try {
-    console.log(theater_id, movieId, seats, seats.date, seats.startTime, seats.endTime);
+    console.log(
+      theater_id,
+      movieId,
+      seats,
+      seats.date,
+      seats.startTime,
+      seats.endTime
+    );
     // Find the specific show and update the bookingSeats
     const result = await Shows.findOneAndUpdate(
       {
@@ -694,20 +706,21 @@ const updateSeats = async ({ theater_id, movieId, seats }) => {
         "shows.movieId": new mongoose.Types.ObjectId(movieId), // Match by movieId
         "shows.dates.date": seats.date, // Match by date
         "shows.dates.times.startTime": seats.startTime, // Match by startTime
-        "shows.dates.times.endTime": seats.endTime // Match by endTime
+        "shows.dates.times.endTime": seats.endTime, // Match by endTime
       },
       {
         $set: {
-          "shows.$[show].dates.$[date].times.$[time].bookingSeats": seats.bookingSeats // Update bookingSeats
-        }
+          "shows.$[show].dates.$[date].times.$[time].bookingSeats":
+            seats.bookingSeats, // Update bookingSeats
+        },
       },
       {
         arrayFilters: [
           { "show.movieId": new mongoose.Types.ObjectId(movieId) },
           { "date.date": seats.date },
-          { "time.startTime": seats.startTime, "time.endTime": seats.endTime }
+          { "time.startTime": seats.startTime, "time.endTime": seats.endTime },
         ],
-        new: true
+        new: true,
       }
     );
 
@@ -719,11 +732,65 @@ const updateSeats = async ({ theater_id, movieId, seats }) => {
 
 app.post("/book_seats", async (req, res) => {
   try {
-    console.log('book', req.body);
+    console.log("book", req.body);
     const result = await updateSeats(req.body);
     res.status(200).json({ message: "Success", result });
   } catch (error) {
-    res.status(500).json({ message: "Failed to update seats", error: error.message });
+    res
+      .status(500)
+      .json({ message: "Failed to update seats", error: error.message });
+  }
+});
+
+const addMovieDetails = async ({
+  movieTitle,
+  movieDescription,
+  movieReleaseDate,
+  movieDuration,
+  moviePoster,
+  movieTrailer,
+  movieProductionCompany,
+  genres,
+  directors,
+  producers,
+  languages,
+  casts,
+}) => {
+  try {
+    const updatedRecord = {
+      title: movieTitle,
+      description: movieDescription,
+      genre: genres,
+      release_date: movieReleaseDate,
+      duration: movieDuration,
+      language: languages,
+      poster_url: moviePoster,
+      trailer_url: movieTrailer,
+      cast: casts,
+      director: directors,
+      producer: producers,
+      production_company: movieProductionCompany,
+      average_rating: 0.0,
+    };
+
+    const record = new MovieRecords(updatedRecord);
+    return await record.save(); 
+  } catch (error) {
+    throw error;
+  }
+};
+
+
+
+app.post("/add_movie_details", async (req, res) => {
+  try {
+    console.log(req.body);
+    await addMovieDetails(req.body);
+    res.status(200).json({ message: "Success" });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Failed to add movie", error: error.message });
   }
 });
 

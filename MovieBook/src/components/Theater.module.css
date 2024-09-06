@@ -16,8 +16,9 @@
 .theater_manager_container,
 .theater_information,
 .screen_information,
-.row_information {
-  padding: 2rem 1rem;
+.row_information,
+.item_information {
+  padding: 1rem 1rem;
 }
 
 fieldset {
@@ -29,6 +30,7 @@ fieldset {
 legend {
   color: #212529;
   font-weight: 600;
+  margin-top:0.5rem;
 }
 label {
   color: #212529;
@@ -36,7 +38,8 @@ label {
   font-size: 1.1rem;
 }
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+input[type="date"] {
   width: 100%;
   font-size: 1.1rem;
   padding: 0.75rem;

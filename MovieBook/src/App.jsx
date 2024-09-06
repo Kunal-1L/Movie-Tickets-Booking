@@ -8,6 +8,7 @@ import Theater from "./components/Theater";
 import BookShow from './components/BookShow';
 import Footer from './components/Footer';
 import About from './components/About'
+import Admin from './components/Admin'
 import MoviesGallery from "./components/MoviesGallery";
 function App() {
   const navRef = useRef(null);
@@ -40,6 +41,7 @@ function App() {
           <Route path="/movies_gallery" element={<MoviesGallery />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/book_show/:movieId" element={<BookShow />}></Route>
+          <Route path='/admin' element = {<Admin />}></Route>
         </Routes>
         <Footer />
       </div>

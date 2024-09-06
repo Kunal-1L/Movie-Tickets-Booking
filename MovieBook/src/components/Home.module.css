@@ -4,6 +4,7 @@
   min-height:100vh;
   background: black;
   position: relative;
+  
 }
 
 .latest_movies{
@@ -16,19 +17,42 @@
 .child_banner_container {
   width: 90%;
   object-fit: contain;
-  margin-top: 5%;
+  margin-top: 3%;
   margin-left: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  background-color:black;
 }
 
 .banner_icon img {
   width: 40rem;
   height:40rem;
   animation: slideRight 10s ease-in-out infinite;
+}
+
+.admin_btn{
+  width:22rem;
+  height:4rem;
+  text-align: center;
+  font-size:2rem;
+  background-color:#212529;
+  color: aqua;
+  border-radius: .5rem;
+  margin-left:50%;
+  transform:translateX(-50%);
+  line-height:4rem;
+  margin-top:1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.admin_btn:hover{
+  width:24rem;
+  color:#212529;
+  background-color: aqua;
+  font-weight: 600;
 }
 
 @keyframes slideRight {

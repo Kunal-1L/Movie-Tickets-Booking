@@ -106,6 +106,7 @@ const SignUp = () => {
               style={{ float: "left" }}
               required
             >
+              <option>Admin</option>
               <option>User</option>
               <option>Theater Manager</option>
             </select>
