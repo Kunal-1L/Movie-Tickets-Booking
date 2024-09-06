@@ -259,7 +259,10 @@ const getMovieDetails = async (movieId, flag) => {
 
 const app = express();
 const PORT = 8000;
-app.use(cors());
+app.use(cors({
+  origin: 'https://movie-tickets-project.vercel.app/',
+  credentials: true
+}));
 app.use(express.json());
 
 app.post("/create_account", async (req, res) => {
