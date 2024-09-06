@@ -8,7 +8,7 @@ const LatestMovies = () => {
   useEffect(() => {
     const fetchLatestMovies = async () => {
       try {
-        const result = await axios.get("/movies", {
+        const result = await axios.get("https://movie-tickets-project.vercel.app/movies", {
           params: {
             limit: 4,
             skip: 0,
