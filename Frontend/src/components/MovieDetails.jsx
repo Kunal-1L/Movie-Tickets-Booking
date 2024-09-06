@@ -23,7 +23,7 @@ const MovieDetails = () => {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const result = await axios.get("http://localhost:8000/movie_details", {
+        const result = await axios.get("https://movie-booking-kkjw.onrender.com/movie_details", {
           params: { movieId, flag: 0 },
         });
         setMovieDetails(result.data.movieDetails);
@@ -36,7 +36,7 @@ const MovieDetails = () => {
     const checkAvailability = async () => {
       try {
         const userId = sessionStorage.getItem('user');
-        const result = await axios.get("http://localhost:8000/check_movie", {
+        const result = await axios.get("https://movie-booking-kkjw.onrender.com/check_movie", {
           params: {userId,  movieId },
         });
         alert(result.data.message);

@@ -90,7 +90,7 @@ const ShowTime = ({ movieId }) => {
     setLoading(true);
     try {
       const result = await axios.post(
-        "http://localhost:8000/add_show",
+        "https://movie-booking-kkjw.onrender.com/add_show",
         showDetails
       );
       alert(result.data.message);

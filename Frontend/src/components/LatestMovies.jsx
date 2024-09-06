@@ -8,7 +8,7 @@ const LatestMovies = () => {
   useEffect(() => {
     const fetchLatestMovies = async () => {
       try {
-        const result = await axios.get("http://localhost:8000/movies", {
+        const result = await axios.get("https://movie-booking-kkjw.onrender.com/movies", {
           params: {
             limit: 4,
             skip: 0,

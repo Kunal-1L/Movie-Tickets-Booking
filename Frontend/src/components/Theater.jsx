@@ -47,7 +47,7 @@ const Theater = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/add_theatre_details",
+        "https://movie-booking-kkjw.onrender.com/add_theatre_details",
         theater_info
       );
 
