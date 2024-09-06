@@ -259,12 +259,7 @@ const getMovieDetails = async (movieId, flag) => {
 
 const app = express();
 const PORT = 8000;
-const cors = require('cors');
-app.use(cors({
-  origin: 'https://movie-tickets-project.vercel.app/', // Replace with your frontend URL
-  methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type,Authorization'
-}));
+app.use(cors());
 
 app.use(express.json());
 
