@@ -34,7 +34,7 @@ const Navbar = ({navRef, updatePosition}) => {
     <div className={styles.nav_container} ref={navRef}>
       <div className={`${styles.app_logo}`}>
         <img
-          src=".././public/cinebook-high-resolution-logo-transparent (2).png"
+          src="/cinebook-high-resolution-logo-transparent (2).png"
           style={{ objectFit: "contain" }}
         />
       </div>

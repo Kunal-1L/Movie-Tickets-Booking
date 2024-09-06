@@ -18,7 +18,7 @@ const Home = () => {
 
             <LatestMovies />
             <div className={styles.child_banner_container}>
-                <div className={styles.banner_icon}><img src='../../public/cinebook-high-resolution-logo-transparent (4).png'></img></div>
+                <div className={styles.banner_icon}><img src='/cinebook-high-resolution-logo-transparent (4).png'></img></div>
                 <div className={styles.banner_tag}>Endless Entertainment Anytime , Anywhere</div>
             </div>
 
