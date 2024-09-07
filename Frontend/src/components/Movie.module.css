@@ -1,37 +1,45 @@
+/* Movie Container Styles */
 .movie_container {
     cursor: pointer;
     background-color: #DEE2E6;
     width: 18%;
     margin: 1rem;
-    box-shadow: 0.2rem 0.2rem 0.75rem #d2dae2; 
+    box-shadow: 0.2rem 0.2rem 0.75rem #d2dae2;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border-radius: 8px; /* Optional: Add rounded corners */
+    border-radius: 8px;
     overflow: hidden; /* Ensure images or content do not overflow */
+    display: flex;
+    flex-direction: column;
   }
   
+  /* Movie Poster Styles */
   .movie_poster img {
     height: 10rem;
     width: 100%;
-    object-fit: cover; /* Optional: 'cover' fills the container while maintaining aspect ratio */
+    object-fit: cover; /* Ensure images cover the container */
+    display: block; /* Remove extra spacing below the image */
   }
   
+  /* Movie Title Styles */
   .movie_title {
     font-size: 1.2rem;
     margin-bottom: 0.2rem;
     color: black;
-    padding: 0.5rem; /* Increased padding for better spacing */
-    text-align: center; /* Center-align the title text */
+    padding: 0.5rem;
+    text-align: center;
   }
   
+  /* Hover Effects */
   .movie_container:hover {
     transform: scale(1.05);
-    box-shadow: 0.75rem 0.75rem 0.75rem #6C757D; /* Increase shadow on hover */
+    box-shadow: 0.75rem 0.75rem 0.75rem #6C757D;
   }
   
+  /* Responsive Styles for Screens <= 768px */
   @media (max-width: 768px) {
     .movie_container {
       width: 45%;
-      margin: 0.5rem; /* Adjust margin for smaller screens */
+      margin: 0.5rem;
     }
   
     .movie_title {
@@ -39,13 +47,14 @@
     }
   }
   
+  /* Responsive Styles for Screens <= 480px */
   @media (max-width: 480px) {
     .movie_container {
-      width: 90%; /* Adjust width for very small screens */
+      width: 90%;
     }
   
     .movie_title {
-      font-size: 0.9rem; /* Further reduce font size if needed */
+      font-size: 0.9rem;
     }
   }
   
