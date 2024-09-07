@@ -32,7 +32,7 @@
 
 .sign_up_box {
   position: absolute;
-  top:20%;
+  top:10%;
   left: 50%;
   transform: translateX(-50%); /* Center both horizontally and vertically */
   width: 50%;
