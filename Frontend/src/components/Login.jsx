@@ -44,7 +44,7 @@ const SignUp = () => {
   const handleCreateAccountClick = async (data) => {
     try {
       const result = await axios.post(
-        "https://movie-booking-kkjw.onrender.com/create_account",
+        "http://localhost:8000/create_account",
         data
       );
 
@@ -60,7 +60,7 @@ const SignUp = () => {
 
   const handleLoginClick = async (data) => {
     try {
-      const result = await axios.post("https://movie-booking-kkjw.onrender.com/sign_in", data);
+      const result = await axios.post("http://localhost:8000/sign_in", data);
       setPopupMessage(result.data.message);
       setShowPopup(true);
       sessionStorage.setItem("user", result.data.id);

@@ -22,10 +22,10 @@ const BookShow = () => {
       setLoading(true);
       try {
         const [theaterResponse, movieResponse] = await Promise.all([
-          axios.get("https://movie-booking-kkjw.onrender.com/check_theater", {
+          axios.get("http://localhost:8000/check_theater", {
             params: { movieId },
           }),
-          axios.get("https://movie-booking-kkjw.onrender.com/movie_details", {
+          axios.get("http://localhost:8000/movie_details", {
             params: { movieId, flag: 1 },
           }),
         ]);
@@ -45,7 +45,7 @@ const BookShow = () => {
     setTheater(index);
     setLoading(true);
     try {
-      const response = await axios.get("https://movie-booking-kkjw.onrender.com/check_dates", {
+      const response = await axios.get("http://localhost:8000/check_dates", {
         params: { theater_id, movieId },
       });
       setDatesTimes(response.data.result);
@@ -60,7 +60,7 @@ const BookShow = () => {
   const handleCheckSeats = async (date, startTime, endTime) => {
     setLoading(true);
     try {
-      const response = await axios.get("https://movie-booking-kkjw.onrender.com/check_seats", {
+      const response = await axios.get("http://localhost:8000/check_seats", {
         params: {
           theater_id: theaterList[theater].theater_id,
           movieId,
@@ -120,7 +120,7 @@ const BookShow = () => {
       setBookedTickets((prevTickets) => [...prevTickets, ...newBookedTickets]);
   
       // Send the updated seats to the server
-      const res = await axios.post("https://movie-booking-kkjw.onrender.com/book_seats", {
+      const res = await axios.post("http://localhost:8000/book_seats", {
         theater_id: theaterList[theater].theater_id,
         movieId,
         seats: { ...seats, bookingSeats: updatedSeats },

@@ -16,7 +16,7 @@ const MoviesGallery = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get("https://movie-booking-kkjw.onrender.com/movies", {
+        const result = await axios.get("http://localhost:8000/movies", {
           params: {
             skip,
             limit,
