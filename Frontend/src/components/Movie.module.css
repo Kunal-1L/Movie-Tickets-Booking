@@ -7,7 +7,7 @@
     box-shadow: 0.2rem 0.2rem 0.75rem #d2dae2;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border-radius: 8px;
-    overflow: hidden; /* Ensure images or content do not overflow */
+    overflow: hidden; 
     display: flex;
     flex-direction: column;
   }
@@ -16,8 +16,8 @@
   .movie_poster img {
     height: 10rem;
     width: 100%;
-    object-fit: cover; /* Ensure images cover the container */
-    display: block; /* Remove extra spacing below the image */
+    object-fit: cover; 
+    display: block; 
   }
   
   /* Movie Title Styles */
@@ -44,17 +44,6 @@
   
     .movie_title {
       font-size: 1rem;
-    }
-  }
-  
-  /* Responsive Styles for Screens <= 480px */
-  @media (max-width: 480px) {
-    .movie_container {
-      width: 90%;
-    }
-  
-    .movie_title {
-      font-size: 0.9rem;
     }
   }
   
