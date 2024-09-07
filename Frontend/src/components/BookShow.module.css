@@ -3,6 +3,7 @@
   min-height: 100vh;
   flex-direction: row;
   flex-wrap: wrap;
+  width:100%;
 }
 
 .tag_cont {
@@ -13,8 +14,15 @@
 
 .img_cont {
   padding: 1rem;
+  max-width: 100%; /* Ensures the container doesn't overflow */
 }
 
+.img_cont img {
+  width: 100%; /* Makes the image responsive */
+  height: auto; /* Maintains the aspect ratio */
+  display: block; /* Removes extra space below the image */
+  object-fit: cover; /* Ensures the image covers the container properly */
+}
 .tag_title {
   font-size: 3rem;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -207,7 +215,9 @@
   .tag_title {
     font-size: 2rem;
   }
-
+  .img_cont{
+    padding:0.5rem;
+  }
   .release_date {
     font-size: 1.3rem;
     margin-bottom: 1rem;
