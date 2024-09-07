@@ -6,15 +6,14 @@ const Movie = ({ movie }) => {
     navigate(`/movie/${movie._id}`);
   };
   return (
-    <>
-      <div onClick={handleMovie} className={styles.movie_container}>
-        <div className={styles.movie_poster}>
-          <img src={movie.poster_url}></img>
-        </div>
-        <div className={styles.movie_rating}>{movie.rating}</div>
-      </div>
+    <div onClick={handleMovie} className={styles.movie_container}>
       <div className={styles.movie_title}>{movie.title}</div>
-    </>
+
+      <div className={styles.movie_poster}>
+        <img src={movie.poster_url}></img>
+      </div>
+      <div className={styles.movie_rating}>{movie.rating}</div>
+    </div>
   );
 };
 
