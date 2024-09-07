@@ -269,7 +269,6 @@ const BookShow = () => {
                   <div>{theaterItem.name}</div>
                   <div>{theaterItem.location}</div>
                   <button
-                    className={styles.btn}
                     onClick={() =>
                       handleViewClick(theaterItem.theater_id, index)
                     }
