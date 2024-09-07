@@ -1,4 +1,4 @@
-
+/* Container for the Theater */
 .theater_container {
   position: relative;
   padding: 2rem;
@@ -8,35 +8,42 @@
   transform: translateX(-50%);
   background-color: #CED4DA;
   border-radius: 8px;
-  box-shadow: 0 0 6px rgba(234, 224, 224, 0.382); 
+  box-shadow: 0 0 6px rgba(234, 224, 224, 0.382);
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
+/* Section Containers */
 .theater_manager_container,
 .theater_information,
 .screen_information,
 .row_information,
 .item_information {
-  padding: 1rem 1rem;
+  padding: 1rem;
 }
 
+/* Fieldset Styles */
 fieldset {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
+/* Legend Styles */
 legend {
   color: #212529;
   font-weight: 600;
-  margin-top:0.5rem;
+  margin-top: 0.5rem;
 }
+
+/* Label Styles */
 label {
   color: #212529;
   font-weight: 500;
   font-size: 1.1rem;
 }
+
+/* Input Styles */
 input[type="text"],
 input[type="number"],
 input[type="date"] {
@@ -45,42 +52,42 @@ input[type="date"] {
   padding: 0.75rem;
   border: none;
   outline: none;
-  box-shadow: inset 0 0 6px rgba(127, 126, 126, 0.382); 
-
+  box-shadow: inset 0 0 6px rgba(127, 126, 126, 0.382);
 }
 
 input:focus {
   border: none;
   outline: none;
-  box-shadow: 0 0 6px rgba(57, 56, 56, 0.382); 
-  ;
+  box-shadow: 0 0 6px rgba(57, 56, 56, 0.382);
 }
 
+/* Button Styles */
 .theater_button button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    margin-top:1rem;
-    color:green;
-    background-color: #ffffff;
-    border: 1px solid #03045e;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 1rem;
+  color: green;
+  background-color: #ffffff;
+  border: 1px solid #03045e;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
- .theater_button button:hover,
- .theater_button button:hover {
-    transform: scale(1.02);
-    background-color: white;
-  }
+.theater_button button:hover {
+  transform: scale(1.02);
+  background-color: #e0e0e0; /* Slightly different hover color for better contrast */
+}
+
+/* Responsive Adjustments for Screens <= 768px */
 @media (max-width: 768px) {
   .theater_container {
     padding: 1.5rem;
     width: 94%;
     margin-left: 1rem;
-    transform: none; 
-    max-width: none; 
+    transform: none;
+    max-width: none;
   }
 
   .theater_manager_container,
@@ -92,7 +99,7 @@ input:focus {
 
   input[type="text"],
   input[type="number"] {
-    font-size: 1rem; 
-    padding: 0.5rem; 
+    font-size: 1rem;
+    padding: 0.5rem;
   }
 }

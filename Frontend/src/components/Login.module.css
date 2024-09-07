@@ -1,137 +1,136 @@
 /* Login.module.css */
-.sign_up_container{
+
+.sign_up_container {
   background: rgba(255, 255, 255, 0.6);
   width: 100%;
   height: 100%;
-  position:absolute;
-  top:0;
+  position: absolute;
+  top: 0;
   left: 0;
-  overflow:hidden;
+  overflow: hidden;
   color: #03045e;
 }
-  
-  .closeButton_container {
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    top:2rem;
-    right:2rem;
-  }
-  
-  .closeButton:hover{
-    border-radius: 50%;
-    background-color: rgba(0,0,0,0.6);
-  }
-  .closeButton {
-    font-size: 2rem;
-    cursor: pointer;
-    color:black;
-  }
+
+.closeButton_container {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute; /* Change from relative to absolute for better positioning */
+  top: 2rem;
+  right: 2rem;
+}
+
+.closeButton:hover {
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.closeButton {
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
+}
+
+.sign_up_box {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+  width: 50%;
+  padding: 20px;
+  background-color: #212529;
+  box-shadow: 0 0 1rem rgba(2, 62, 138, 0.5);
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: aqua;
+}
+
+.sign_up_box input {
+  box-shadow: inset 0 0 0.2rem aqua;
+}
+
+.sign_up_box input:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0 0 0.5rem rgba(234, 224, 224, 0.382);
+}
+
+.sign_up_logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.user_id, .user_password {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.user_role label,
+.user_id label,
+.user_password label {
+  color: aqua;
+  padding-right: 0.5rem;
+}
+
+.input_cont {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.create_account {
+  width: 100%;
+}
+
+.authenticate {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.authenticate:hover {
+  background-color: #0056b3;
+}
+
+span {
+  color: #adadad;
+  cursor: pointer;
+}
+
+span:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .sign_up_box {
-    position: absolute;
-    top: 6rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    padding: 20px;
-    background-color: #212529;
-    box-shadow: 0 0 1rem rgba(2, 62, 138, 0.5);
-    border-radius: 8px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: aqua;
+    width: 90%;
+    padding: 15px;
   }
-  
-  .sign_up_box input{
-    box-shadow: inset 0 0 0.2rem aqua
 
-  }
-  .sign_up_box input:focus{
-    border:none;
-    outline: none;
-    box-shadow: 0 0 0.5rem rgba(234, 224, 224, 0.382); 
-  }
   .sign_up_logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-size: 20px;
   }
-  
-  .user_id, .user_password {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  .user_role label ,
-  .user_id label ,
-  .user_password label{
-    color: aqua;
-    padding-right: 0.5rem;
 
-  }
-  
   .input_cont {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    padding: 8px;
+    font-size: 14px;
   }
-  
-  .create_account {
-    width: 100%;
-  }
-  
+
   .authenticate {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 8px;
+    font-size: 14px;
   }
-  
-  .authenticate:hover {
-    background-color: #0056b3;
-  }
-  
-  span {
-    color: #adadad;
-    cursor: pointer;
-  }
-  
-  span:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-
-    .sign_up_box {
-      width: 90%;
-      padding: 15px;
-    }
-  
-    .sign_up_logo {
-      font-size: 20px;
-    }
-  
-    .input_cont {
-      padding: 8px;
-      font-size: 14px;
-    }
-  
-    .authenticate{
-      padding: 8px;
-      font-size: 14px;
-    }
-  }
-
-
-  
+}
