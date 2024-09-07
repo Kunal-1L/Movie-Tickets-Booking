@@ -259,7 +259,10 @@ const getMovieDetails = async (movieId, flag) => {
 
 const app = express();
 const PORT = 8000;
-app.use(cors());
+app.use(cors({
+  origin: 'https://movie-tickets-booking-two.vercel.app', // your frontend domain
+  credentials: true, // Allow credentials such as cookies
+}));
 
 app.use(express.json());
 

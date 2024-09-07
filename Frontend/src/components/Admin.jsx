@@ -61,7 +61,7 @@ const Admin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/add_movie_details",
+        "https://movie-booking-kkjw.onrender.com/add_movie_details",
         movieInfo
       );
 
