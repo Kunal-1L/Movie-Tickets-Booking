@@ -1,49 +1,37 @@
-/* Movie Container Styles */
 .movie_container {
     cursor: pointer;
     background-color: #DEE2E6;
     width: 18%;
-    margin: 1rem;
-    box-shadow: 0.2rem 0.2rem 0.75rem #d2dae2;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border-radius: 8px;
-    overflow: hidden; 
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Movie Poster Styles */
-  .movie_poster img {
+    margin:1rem;
+    box-shadow: 0.2rem 0.2rem 0.75rem #d2dae2; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out ;
+}
+
+.movie_poster img {
     height: 10rem;
     width: 100%;
-    object-fit: cover; 
-    display: block; 
-  }
-  
-  /* Movie Title Styles */
-  .movie_title {
+    object-fit: contain;
+}
+
+.movie_title {
     font-size: 1.2rem;
     margin-bottom: 0.2rem;
     color: black;
-    padding: 0.5rem;
-    text-align: center;
-  }
-  
-  /* Hover Effects */
-  .movie_container:hover {
+    padding:0.1rem;
+}
+
+.movie_container:hover {
     transform: scale(1.05);
-    box-shadow: 0.75rem 0.75rem 0.75rem #6C757D;
-  }
-  
-  /* Responsive Styles for Screens <= 768px */
-  @media (max-width: 768px) {
+    box-shadow: 0.75rem 0.75rem 0.75rem #6C757D; 
+}
+
+@media (max-width: 768px) {
     .movie_container {
-      width: 45%;
-      margin: 0.5rem;
+        width: 45%;
     }
-  
+
     .movie_title {
-      font-size: 1rem;
+        font-size: 1rem;
     }
-  }
-  
+}
+
