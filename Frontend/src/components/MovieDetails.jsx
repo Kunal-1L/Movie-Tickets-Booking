@@ -39,7 +39,6 @@ const MovieDetails = () => {
         const result = await axios.get("https://movie-booking-kkjw.onrender.com/check_movie", {
           params: {userId,  movieId },
         });
-        alert(result.data.message);
         console.log(result);
         setBooking(result.data.message);
       } catch (error) {
